@@ -1,0 +1,96 @@
+# Compiled source files
+*.dll
+*.exe
+*.so
+*.dylib
+*.log
+*.pdb
+*.mdb
+*.cache
+*.ilk
+*.meta
+
+# Build directories
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+.vscode/
+.env
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.sln.ide
+.vscode/
+
+# Auto-generated files
+*.g.cs
+*.g.i.cs
+*.generated.cs
+
+# Visual Studio working folder
+.vs/
+.vscode/
+*.code-workspace
+
+# Rider/JetBrains
+.idea/
+*.sln.iml
+*.dotCover
+*.resharper
+*_ReSharper.*
+.ReSharperCache/
+
+# NuGet packages
+*.nupkg
+**/packages/*
+*.nuget/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.mdf
+*.ldf
+*.jfm
+
+# ASP.NET specific
+wwwroot/node_modules/
+wwwroot/lib/
+node_modules/
+
+# Azure Functions specific
+local.settings.json
+Functions/bin/
+Functions/obj/
+
+# EntityFramework Migrations
+[Mm]igrations/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# macOS files
+*.DS_Store
+
+# IDE Specific files
+.idea/
+*.sln.iml
+
+# Docker
+docker-compose.override.yml
+docker-compose.*
+Dockerfile*
+.dockerignore
+
+# Testing
+TestResults/
+.trx
+*.coverage
+.coveragexml
+*.testlog
