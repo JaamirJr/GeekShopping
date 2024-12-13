@@ -36,7 +36,7 @@ namespace GeekShopping.IdentityServer.Initializer
                 Email = "junior.jamir@gmaill.com",
                 EmailConfirmed = true,
                 PhoneNumber = "+55 (37) 99109-7820",
-                FirtsName = "Jamir",
+                FirstName = "Jamir",
                 LastName = "Admin"
             };
 
@@ -45,8 +45,8 @@ namespace GeekShopping.IdentityServer.Initializer
 
             var adminClaims = _user.AddClaimsAsync(admin, new Claim[]
             {
-                new Claim(JwtClaimTypes.Name, $"{admin.FirtsName} {admin.LastName}"),
-                new Claim(JwtClaimTypes.GivenName, admin.FirtsName),
+                new Claim(JwtClaimTypes.Name, $"{admin.FirstName} {admin.LastName}"),
+                new Claim(JwtClaimTypes.GivenName, admin.FirstName),
                 new Claim(JwtClaimTypes.FamilyName, admin.LastName),
                 new Claim(JwtClaimTypes.Role, IdentityConfiguration.Admin)
             }).Result;
@@ -57,7 +57,7 @@ namespace GeekShopping.IdentityServer.Initializer
                 Email = "junior.jamir@gmaill.com",
                 EmailConfirmed = true,
                 PhoneNumber = "+55 (37) 99109-7820",
-                FirtsName = "Jamir",
+                FirstName = "Jamir",
                 LastName = "Client"
             };
 
@@ -66,8 +66,8 @@ namespace GeekShopping.IdentityServer.Initializer
 
             var clientClaims = _user.AddClaimsAsync(client, new Claim[]
             {
-                new Claim(JwtClaimTypes.Name, $"{client.FirtsName} {client.LastName}"),
-                new Claim(JwtClaimTypes.GivenName, client.FirtsName),
+                new Claim(JwtClaimTypes.Name, $"{client.FirstName} {client.LastName}"),
+                new Claim(JwtClaimTypes.GivenName, client.FirstName),
                 new Claim(JwtClaimTypes.FamilyName, client.LastName),
                 new Claim(JwtClaimTypes.Role, IdentityConfiguration.Client)
             }).Result;

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authentication;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddHttpClient<IProductService, ProductService>(c =>
-	c.BaseAddress = new Uri(builder.Configuration.GetValue<string>("ServiceUrls:ProductAPI")));
+	c.BaseAddress = new Uri(builder.Configuration["ServiceUrls:ProductAPI"]));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -18,7 +18,7 @@ builder.Services.AddAuthentication(options =>
 .AddCookie("Cookies", c => c.ExpireTimeSpan = TimeSpan.FromMinutes(10))
 .AddOpenIdConnect("oidc", options =>
 {
-	options.Authority = builder.Configuration.GetValue<string>("ServiceUrls:IdentityServer");
+	options.Authority = builder.Configuration["ServiceUrls:IdentityServer"];
 	options.GetClaimsFromUserInfoEndpoint = true;
 	options.ClientId = "geek_shopping";
 	options.ClientSecret = "my_super_secret";
@@ -29,6 +29,7 @@ builder.Services.AddAuthentication(options =>
 	options.TokenValidationParameters.RoleClaimType = "role";
 	options.Scope.Add("geek_shopping");
 	options.SaveTokens = true;
+	options.CallbackPath = "/signin-oidc";
 }
 );
 
